@@ -31,6 +31,9 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Coming Soon | 365 days of Allen</title>
+</svelte:head>
 <!-- <div class="h-[200vh] px-2 py-32">
 	<div class="h-full mx-auto"></div>
 	<div class=" h-full flex gap-5 bigass-container">
