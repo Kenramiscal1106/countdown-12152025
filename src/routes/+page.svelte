@@ -15,12 +15,11 @@
 			HOURS = MINUTES * 60,
 			DAYS = HOURS * 24;
 		const difference = Date.parse('2025-12-14T16:00:00+00:00') - Date.now();
+		// console.log(diff);
 		countdownData.days = Math.floor(difference / DAYS).toString();
 		countdownData.hours = Math.floor((difference % DAYS) / HOURS).toString();
-		countdownData.minutes = Math.floor(((difference % DAYS) % HOURS) / MINUTES).toString();
-		countdownData.seconds = Math.floor(
-			(((difference % DAYS) % HOURS) % MINUTES) / SECONDS
-		).toString();
+		countdownData.minutes = Math.floor((difference % HOURS) / MINUTES).toString();
+		countdownData.seconds = Math.floor((difference % MINUTES) / SECONDS).toString();
 	}
 	onMount(() => {
 		updateCountdown();
@@ -43,9 +42,9 @@
 
 	<div class="h-full mx-auto"></div>
 </div> -->
-<div class="max-w-min mx-auto h-screen flex justify-center flex-col gap-12">
-	<h1 class="text-6xl text-center">Coming soon... ready yourself in</h1>
-	<div class="flex gap-20">
+<div class="max-w-min mx-auto h-screen flex justify-center flex-col gap-[2vw]">
+	<h1 class="text-[4vw] text-center">Coming soon... ready yourself in</h1>
+	<div class="flex gap-[2vw]">
 		<NumberCountdown type="Days" value={countdownData.days} />
 		<NumberCountdown type="Hours" value={countdownData.hours} />
 		<NumberCountdown type="Minutes" value={countdownData.minutes} />

@@ -6,17 +6,17 @@
 	const { type, value }: Props = $props();
 </script>
 
-<div class="flex flex-col items-center gap-12">
-	<div class="px-6 countdown font-bold">{value}</div>
-	<h2 class="text-5xl">{type}</h2>
+<div class="flex flex-col items-center gap-[2vw]">
+	<div class="px-[2vw] countdown font-bold">{(value.length === 1 ? '0' : '') + value}</div>
+	<h2 class="text-[3vw]">{type}</h2>
 </div>
 
 <style>
 	.countdown {
-		border-radius: 1.5rem;
+		border-radius: 2vw;
 		border: 0.25rem solid #000;
 		background: #fff;
-		box-shadow: 0.5rem 0.5rem 0 0 #000;
+		box-shadow: 0.5vw 0.5vw 0 0 #000;
 		display: flex;
 		font-size: 10vw;
 		color: #000;
